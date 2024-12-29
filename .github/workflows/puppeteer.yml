@@ -2,10 +2,11 @@ name: Visa Slot Checker Automation
 
 on:
   schedule:
-    # Define multiple schedules to stagger execution
-    - cron: "*/5 * * * *"  # Every 5 minutes
-  
-  workflow_dispatch:  # Allows manual trigger
+    # Three schedules staggered by 3 minutes
+    - cron: "*/5 * * * *" # Every 3 minutes
+    - cron: "1-59/3 * * * *" # Offset by 1 minute (1, 4, 7, ...)
+
+  workflow_dispatch: # Allows manual trigger
 
 jobs:
   run-script:
@@ -37,7 +38,7 @@ jobs:
             libxtst6
 
       - name: Install Dependencies
-        run: npm ci  # Use `ci` for clean installs to reduce issues.
+        run: npm ci # Use `ci` for clean installs to reduce issues.
 
       - name: Fix Puppeteer Permission
         run: chmod -R 755 node_modules/puppeteer
