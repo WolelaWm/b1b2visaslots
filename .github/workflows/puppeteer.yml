@@ -22,7 +22,6 @@ jobs:
         run: |
           sudo apt-get update || true
           sudo apt-get install -y \
-            libatk-bridge-2.0-0 \
             libatk1.0-0 \
             libcups2 \
             libgdk-pixbuf2.0-0 \
@@ -37,7 +36,6 @@ jobs:
             libxss1 \
             libxtst6 \
             libappindicator3-1 \
-            libappindicator1 \
             libatspi2.0-0 \
             libv4l-0 \
             libv4l2rds0 \
