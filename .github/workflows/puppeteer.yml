@@ -2,7 +2,7 @@ name: Puppeteer Script Automation
 
 on:
   schedule:
-    - cron: "*/3 * * * *"  # Runs every 3 minutes
+    - cron: "*/3 * * * *"  # Run every 3 minutes
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
@@ -42,7 +42,8 @@ jobs:
             libv4lconvert0
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          sudo npm install
 
       - name: Run Puppeteer Script
         run: node index.js
