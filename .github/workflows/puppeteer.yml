@@ -2,7 +2,7 @@ name: Puppeteer Script Automation
 
 on:
   schedule:
-    - cron: "*/3 * * * *" # Runs every 3 minutes
+    - cron: "*/3 * * * *"  # Runs every 3 minutes
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
@@ -17,6 +17,31 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+
+      - name: Install Puppeteer dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libatk-bridge-2.0-0 \
+            libatk1.0-0 \
+            libcups2 \
+            libgdk-pixbuf2.0-0 \
+            libnspr4 \
+            libnss3 \
+            libx11-xcb1 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxrandr2 \
+            libgbm1 \
+            libasound2 \
+            libxss1 \
+            libxtst6 \
+            libappindicator3-1 \
+            libappindicator1 \
+            libatspi2.0-0 \
+            libv4l-0 \
+            libv4l2rds0 \
+            libv4lconvert0
 
       - name: Install Dependencies
         run: npm install
