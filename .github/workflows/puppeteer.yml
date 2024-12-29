@@ -23,7 +23,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             libatk1.0-0 \
-            libcups2 \
             libgdk-pixbuf2.0-0 \
             libnspr4 \
             libnss3 \
@@ -32,11 +31,9 @@ jobs:
             libxdamage1 \
             libxrandr2 \
             libgbm1 \
-            libasound2 \
             libxss1 \
-            libxtst6 \
-            libappindicator3-1 \
-            libatspi2.0-0
+            libxtst6
+          # Removed 'libasound2' and other less critical packages.
 
       - name: Install Dependencies
         run: npm install
