@@ -33,18 +33,17 @@ jobs:
             libgbm1 \
             libxss1 \
             libxtst6
-          # Removed 'libasound2' and other less critical packages.
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci  # Use `ci` for clean installs to reduce issues.
 
-      - name: Install Puppeteer Browser
+      - name: Fix Puppeteer Permission
+        run: chmod -R 755 node_modules/puppeteer
+
+      - name: Install Puppeteer Browser Manually
         run: npx puppeteer browsers install chrome
         env:
           CI: false
-
-      - name: Set Puppeteer Permissions
-        run: chmod -R 755 node_modules/puppeteer/.local-chromium
 
       - name: Run Script
         run: node index.js
