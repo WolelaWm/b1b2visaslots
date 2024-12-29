@@ -1,0 +1,30 @@
+{
+  "name": "visa-slot-checker",
+  "version": "1.0.0",
+  "description": "A script to automate visa slot checking and send notifications via Telegram",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "npx puppeteer browsers install chrome",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "visa",
+    "automation",
+    "puppeteer",
+    "telegram"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "chrome-aws-lambda": "^10.1.0",
+    "dotenv": "^16.4.7",
+    "node-fetch": "^2.6.7",
+    "puppeteer": "^23.11.1",
+    "puppeteer-core": "^10.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
