@@ -20,7 +20,7 @@ jobs:
 
       - name: Install Puppeteer dependencies
         run: |
-          sudo apt-get update
+          sudo apt-get update || true
           sudo apt-get install -y \
             libatk-bridge-2.0-0 \
             libatk1.0-0 \
