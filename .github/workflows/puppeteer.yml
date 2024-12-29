@@ -3,8 +3,8 @@ name: Visa Slot Checker Automation
 on:
   schedule:
     # Three schedules staggered by 3 minutes
-    - cron: "*/5 * * * *" # Every 3 minutes
-    - cron: "1-59/3 * * * *" # Offset by 1 minute (1, 4, 7, ...)
+    - cron: "*/5 * * * *" # Every 5 minutes
+    - cron: "3-59/5 * * * *"
 
   workflow_dispatch: # Allows manual trigger
 
