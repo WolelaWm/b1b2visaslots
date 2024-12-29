@@ -2,7 +2,8 @@ name: Puppeteer Script Automation
 
 on:
   schedule:
-    - cron: "*/3 * * * *" # Run every 3 minutes
+    - cron: "*/3 * * * *" # Runs every 3 minutes
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   run-script:
